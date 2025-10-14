@@ -1,6 +1,0 @@
-- name: install kolla
-  hosts: all
-  become: true
-  tasks:
-    - name: execute
-      script: install-kolla.sh
