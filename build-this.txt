@@ -1,18 +1,16 @@
+I am going to build MAAS, Terraform, Ansible, and Openstack environment to do this:
+provision every computer in the office to Ubuntu with remote desktop to a Windows virtual machine that is optimized for VBUSA. It has a robust backup system with Ceph and Azure. The only self-hosted tools so far is a password manager and Zammad. 
+
+---
 dns.internal
 ntp.internal
-admin.internal
+admin.internal 
+docs.internal
 ///
-wiki.admin.internal
-Shared Folders: Company, Artwork, Archive
-Docs.internal
-Paper.internal
-Virtual Machines: Desktop.internal, Graphics.internal
-Passwords.internal
-Tickets.internal
-Chat.internal
-Todo.internal
-Knowledge.internal
-ERP.internal* If possible from backup
+Folders: Company, Graphics, Archive
+desktop.internal
+graphics.internal
+passwords.internal
+tickets.internal
 ///
-for testing
-Mailu
+mailu for testing
