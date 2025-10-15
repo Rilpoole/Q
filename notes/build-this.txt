@@ -1,3 +1,4 @@
+<<<<<<< HEAD:build-this.txt
 I am going to build MAAS, Terraform, Ansible, and Openstack environment to do this:
 provision every computer in the office to Ubuntu with remote desktop to a Windows virtual machine that is optimized for VBUSA. It has a robust backup system with Ceph and Azure. The only self-hosted tools so far is a password manager and Zammad. 
 
@@ -14,3 +15,5 @@ passwords.internal
 tickets.internal
 ///
 mailu for testing
+=======
+>>>>>>> a645887d0418776844ba8663fd4633a77c7be533:notes/build-this.txt
