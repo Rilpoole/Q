@@ -1,0 +1,43 @@
+---
+- name: deploy desktop
+  hosts: all
+  become: yes
+  tasks:
+    - name: update drivers
+      command: ubuntu-drivers autoinstall
+
+    - name: turn off systemd-networkd
+      service: 
+        name: systemd-networkd
+        state: stopped
+        enabled: no
+
+    - name: install desktop
+      apt:
+        name:
+          - xorg
+          - ubuntu-desktop
+        state: present
+
+    - name: install splash
+      apt:
+        name:
+        - plymouth
+        - plymouth-themes
+        state: present
+
+    - name: copy custom grub file
+      copy:
+        src: ./grub
+        dest: /etc/default/grub
+        mode: '0644'
+        force: yes
+
+    - name: set graphical boot
+        command: plymouthd --graphical-boot
+
+    - name: update grub
+        command: update-grub
+
+    - name: rebuild RAM
+        command: update-initramfs -u
