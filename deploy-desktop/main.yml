@@ -28,16 +28,16 @@
 
     - name: copy custom grub file
       copy:
-        src: ./grub
+        src: ./deploy-desktop/grub
         dest: /etc/default/grub
         mode: '0644'
         force: yes
 
     - name: set graphical boot
-        command: plymouthd --graphical-boot
+      command: plymouthd --graphical-boot
 
     - name: update grub
-        command: update-grub
+      command: update-grub
 
     - name: rebuild RAM
-        command: update-initramfs -u
+      command: update-initramfs -u
