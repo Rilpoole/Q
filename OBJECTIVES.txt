@@ -1,0 +1,5 @@
+[ ] Samba : Company User Graphics Archive
+[ ] KVM: Desktop, Zammad, Bitwarden
+[ ] /Root /Company /Quickbooks /User /Graphics
+[ ] Snapshot every 5 min, Snapshop every day, Image every month
+[ ] VPN access
