@@ -1,0 +1,28 @@
+<domain type='kvm'>
+  <name>zammad</name>
+  <memory unit='KiB'>2000000</memory> <!-- 2GB RAM -->
+  <vcpu placement='static'>1</vcpu> <!-- 1 CPU -->
+  <os>
+    <type arch='x86_64' machine='pc-i440fx-2.9'>hvm</type>
+    <boot dev='hd'/>
+  </os>
+  <devices>
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='qcow2'/>
+      <source file='~/self-host/os/zammad-os.qcow2'/>
+      <target dev='vda' bus='virtio'/>
+      <address type='pci' bus='0x00' domain='0x0000' slot='0x01' function='0x0'/>
+    </disk>
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='qcow2'/>
+      <source file='~/vm/self-host/data/zammad-data.qcow2'/>
+      <target dev='vdb' bus='virtio'/>
+      <address type='pci' bus='0x00' domain='0x0000' slot='0x02' function='0x0'/>
+    </disk>
+    <interface type='network'>
+      <mac address='52:54:00:dd:9d:20'/>
+      <source network='default'/>
+      <model type='virtio'/>
+    </interface>
+  </devices>
+</domain>

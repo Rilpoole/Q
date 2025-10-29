@@ -1,0 +1,29 @@
+DRIVE 00:
+    PART /
+    PART ~/data
+
+DRIVE 01:
+    PART ~/self-host/os
+    PART ~/self-host/data
+    PART ~/self-host/backup
+
+DRIVE 03: 
+    PART ~/company/os
+    PART ~/company/data
+
+DRIVE 04:
+    PART ~/company/backup
+
+DRIVE 05: 
+    PART ~/qb/os
+    PART ~/qb/data
+
+DRIVE 06: 
+    PART ~/qb/backup
+
+DRIVE 07: 
+    PART ~/graphics/os
+    PART ~/graphics/data
+
+DRIVE 08: 
+    PART ~/graphics/backup
