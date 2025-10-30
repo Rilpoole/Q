@@ -3,7 +3,7 @@ DRIVE 00:
     PART ~/data
 
 DRIVE 01:
-    PART ~/self-host/os
+    PART ~/self-host/os {zammad, bitwarden, element, maas, opnsense}
     PART ~/self-host/data
     PART ~/self-host/backup
 
