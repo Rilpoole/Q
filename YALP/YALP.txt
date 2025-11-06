@@ -1,9 +1,0 @@
-acct [create,find,update,delete,list] --add-basic-accounts
-trns [find,update,delete,list]
-rprt [balance pnl cashflow]
-
-assets: cssh, rec, ass
-liabilities: pay
-income: sales, inc-refund, inc-credit
-expense: exp, exp-refund, exp-credit, dep
-equity: eqt 
