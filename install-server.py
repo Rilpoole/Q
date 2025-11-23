@@ -1,1 +1,1 @@
-print("install server")
+print("Begin install server")
