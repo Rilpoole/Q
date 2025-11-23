@@ -2,5 +2,4 @@
 
 import subprocess
 
-result = subprocess.run(["parted", "-l"], capture_output=True, text=True)
-print(result.stdout)
+result = subprocess.run(["parted", "-l"], capture_output=False, text=True)
