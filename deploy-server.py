@@ -2,4 +2,5 @@
 
 import subprocess
 
-result = subprocess.run(["parted", "-l"], capture_output=False, text=True)
+cur_part = subprocess.run(["lsblk"], capture_output=True, text=True)
+print(cur_part.stdout)
