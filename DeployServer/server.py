@@ -15,8 +15,6 @@ class Server:
         try: 
             Server.run(["sudo", "apt", "update"])
             Server.run(["sudo", "apt", "upgrade", "-y"])
-            Server.run(["sudo", "apt", "install", "python3-pip", "-y"])
-            Server.run(["pip3", "install", "PyYAML"])
         except subprocess.CalledProcessError as e:
             if e.stdout:
                 print("STDOUT:", e.stdout)
