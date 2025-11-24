@@ -1,17 +1,18 @@
 import subprocess
+import tempfile
 
-# Show current partitions
-cur_part = subprocess.run(["lsblk", "-o", "NAME,SIZE,TYPE,MOUNTPOINT"], capture_output=True, text=True)
-print(cur_part.stdout)
+password = input("Enter password to use for encryption: ")
 
-# Ask user for partitions to encrypt (space-separated)
-use_part = input("Which partitions would you like to deploy? [sda, sdb,...]")
-partitions = use_part.split()
+# create temporary key file
+with tempfile.NamedTemporaryFile(mode='w', delete=False) as f:
+    f.write(password)
+    key_file = f.name
 
 for partition in partitions:
     try:
         subprocess.run(
-            ["sudo", "cryptsetup", "luksFormat", f"/dev/{partition}"],
+            ["sudo", "cryptsetup", "luksFormat", "/dev/" + partition,
+             "--batch-mode", "--key-file", key_file],
             check=True
         )
         print(f"/dev/{partition} has been encrypted successfully.")
