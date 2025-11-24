@@ -7,9 +7,9 @@ print("Starting server deploy script...")
 Console.run(["lsblk"])
 parts = input("What partitions would you like to deploy? [sda, sdb, ...]").split(" ")
 
-keys = []
+keys = {}
 for part in parts:
-    keys.append((part,random.randint(100000,999999)))
+    keys[part] = random.randint(100000,999999)
     
 with open("luks.out","w") as file:
     file.write(json.dumps(keys))
