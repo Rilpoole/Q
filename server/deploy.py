@@ -12,4 +12,4 @@ for part in parts:
     keys[part] = random.randint(100000,999999)
     
 with open("luks.out","w") as file:
-    file.write(json.dumps(keys))
+    file.write(json.dumps(keys,indent=4,sort_keys=True))
