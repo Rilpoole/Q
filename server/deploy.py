@@ -5,7 +5,7 @@ import json
 
 print("Starting server deploy script...")
 Console.run(["lsblk"])
-parts = input("What partitions would you like to deploy? [sda, sdb, ...]").split(" ")
+parts = input("What partitions would you like to deploy? [sda, sdb, ...] ").split(" ")
 
 keys = {}
 for part in parts:
