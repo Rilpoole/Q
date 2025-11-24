@@ -3,17 +3,24 @@ import subprocess
 class Server:
 
     @staticmethod
-    def run(cmd, capture_output = True, check = True, text = True):
+    def run(cmd, capture_output_arg=True, check_arg=True, text_arg=True):
+        print(f"Running command: {' '.join(cmd)}")
         try:
-            subprocess.run(cmd,capture_output,check,text)
+            result = subprocess.run(cmd, capture_output=capture_output_arg, check=check_arg, text=text_arg)
+            print(result.stdout if result.stdout else "")
+            print(result.stderr if result.stderr else "")
+            return result
         except subprocess.CalledProcessError as e:
-            print(e.stderr)
-
+            print("Command failed!")
+            if e.stdout:
+                print("STDOUT:", e.stdout)
+            if e.stderr:
+                print("STDERR:", e.stderr)
+            return None
 
     @staticmethod
     def install_depend():
-        Server.run(["apt","update"])
-        Server.run(["apt","upgrade","-y"])
-        Server.run(["apt","install","python3-pip","-y"])
-        Server.run(["pip3","install","PyYaml","-y"])
-
+        Server.run(["sudo", "apt", "update"])
+        Server.run(["sudo", "apt", "upgrade", "-y"])
+        Server.run(["sudo", "apt", "install", "python3-pip", "-y"])
+        Server.run(["pip3", "install", "PyYAML"])
